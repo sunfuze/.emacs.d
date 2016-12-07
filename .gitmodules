@@ -1,0 +1,6 @@
+[submodule "third-parts/dash"]
+	path = third-parts/dash
+	url = https://github.com/magnars/dash.el.git
+[submodule "third-parts/smooth-scrolling"]
+	path = third-parts/smooth-scrolling
+	url = git@github.com:aspiers/smooth-scrolling.git

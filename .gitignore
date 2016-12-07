@@ -1,0 +1,15 @@
+elpa
+auto-save-list/
+*~
+\#*\#
+third-parts/
+recentf
+history
+smex-items
+backups
+session.*
+places
+.places
+ido.last
+bookmarks
+eshell
