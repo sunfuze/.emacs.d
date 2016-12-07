@@ -12,6 +12,7 @@
 (setq recentf-max-menu-items 25)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
+;; Counsel and swiper 
 (require 'swiper)
 (global-set-key (kbd "C-s") 'swiper)
 
@@ -34,6 +35,10 @@
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 (setq ivy-initial-inputs-alist nil)
 
+;; Help function
+(global-set-key (kbd "C-h f") 'counsel-describe-function)
+(global-set-key (kbd "C-h v") 'counsel-describe-variable)
+(global-set-key (kbd "C-h C-f") 'describe-function)
 
 (provide 'key-bindings)
 
