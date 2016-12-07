@@ -12,6 +12,8 @@
 (defun open-my-init-file ()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
+(global-set-key (kbd "<f2>") 'open-my-init-file)
+
 ;; Disable backup file
 (setq make-backup-files nil)
 
