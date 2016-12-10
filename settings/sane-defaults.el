@@ -103,6 +103,18 @@
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 
+;; Setup smart parens
+;; Default setup of smartparens-config
+(require 'smartparens-config)
+(setq sp-autoescape-string-quote nil)
+(dolist (it '(css-mode-hook
+	      js-mode-hook
+	      emmet-mode
+	      java-mode
+	      markdown-mode
+	      elixir-mode))
+  (add-hook it 'turn-on-smartparens-mode))
+
 ;; Smart show paren
 (defadvice show-paren-function (around fix-show-paren-function activate)
    "Highlight enclosing parens."
@@ -113,8 +125,6 @@
 ;; Set expand-region
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
-
-;; Set multiple cursors
 
 ;; Rename file and buffer
 (defun rename-file-and-buffer ()
@@ -131,5 +141,26 @@
           (set-visited-file-name new-name t t)))))))
 
 (global-set-key (kbd "C-c r") 'rename-file-and-buffer)
+
+;; guide-key
+(require 'guide-key)
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x 8" "C-x +"))
+(guide-key-mode 1)
+(setq guide-key/recursive-key-sequence-flag t)
+(setq guide-key/popup-window-position 'bottom)
+
+;; Font lock dash.el
+(eval-after-load "dash" '(dash-enable-font-lock))
+
+;; Visual regexp
+(require 'visual-regexp)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+(define-key global-map (kbd "C-c r") 'vr/replace)
+
+;; Browse kill ring
+(require 'browse-kill-ring)
+(setq browse-kill-ring-quit-action 'save-and-restore)
+(global-set-key (kbd "C-c y") 'browse-kill-ring)
+
 
 (provide 'sane-defaults)

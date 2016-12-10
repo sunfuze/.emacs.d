@@ -1,3 +1,10 @@
+;; Disable menu tool and scroll bar
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+(setq inhibit-startup-message t)
+
 (setq font-lock-maximum-decoration t
       color-theme-is-global t
       truncate-partial-width-windows nil)
@@ -14,23 +21,30 @@
 ;; Show line number
 (global-linum-mode 1)
 
-;; Default theme
-(defun use-default-theme ()
-  (interactive)
-  (when (boundp 'my/default-font)
-    (set-face-attribute 'default nil :font my/default-font)))
+;; Set font
+(when window-system
+  (setq my/default-font "-*-Monaco-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1")
+  (setq my/presentation-font "-*-Monaco-normal-normal-normal-*-21-*-*-*-m-0-iso10646-1")
+  (set-face-attribute 'default nil :font my/default-font))
 
-;; Presentation theme
+;; Default theme
 (defun use-presentation-theme ()
   (interactive)
   (when (boundp 'my/presentation-font)
     (set-face-attribute 'default nil :font my/presentation-font)))
+
+(defun use-default-theme ()
+  (interactive)
+  (load-theme 'atom-one-dark t)
+  (when (boundp 'my/default-font)
+    (set-face-attribute 'default nil :font my/default-font)))
 
 (defun toggle-presentation-mode ()
   (interactive)
   (if (string= (frame-parameter nil 'font) my/default-font)
       (use-presentation-theme)
     (use-default-theme)))
+
 
 (global-set-key (kbd "C-<f9>") 'toggle-presentation-mode)
 
@@ -39,7 +53,6 @@
 ;; Dont't defer screen updates when performing operations
 (setq redisplay-dont-paust t)
 
-
 ;; org-mode colors
 (setq org-todo-keyword-faces
       '(
@@ -47,8 +60,7 @@
 	("DONE" . (:foreground "green" :weight bold))
 	("IMPEDED" . (:foreground "red" :weight bold))
 	))
-;; Load theme
-(load-theme 'atom-one-dark t)
+
 
 ;; Highlight matching parentheses when the poing is on them
 (show-paren-mode 1)

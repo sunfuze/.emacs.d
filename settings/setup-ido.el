@@ -50,6 +50,7 @@
 (add-to-list 'ido-ignore-directories "target")
 (add-to-list 'ido-ignore-directories "node_modules")
 (add-to-list 'ido-ignore-directories "dist")
+(add-to-list 'ido-ignore-files "\.DS_Store")
 
 ;; Ido at point (C-,)
 
