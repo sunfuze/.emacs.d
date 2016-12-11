@@ -112,6 +112,7 @@
 	      emmet-mode
 	      java-mode
 	      markdown-mode
+	      emacs-lisp-mode
 	      elixir-mode))
   (add-hook it 'turn-on-smartparens-mode))
 

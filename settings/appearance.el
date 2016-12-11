@@ -70,4 +70,15 @@
   (tooltip-mode -1)
   (blink-cursor-mode -1))
 
+;; config diminish
+(require 'diminish)
+(diminish 'elisp-slime-nav-mode)
+(diminish 'ivy-mode "ivy")
+(diminish 'guide-key-mode)
+(diminish 'eldoc-mode)
+(diminish 'smartparens-mode)
+(diminish 'auto-revert-mode)
+(diminish 'hungry-delete-mode)
+(diminish 'subword-mode)
+
 (provide 'appearance)

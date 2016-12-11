@@ -46,62 +46,66 @@
 (defun init--install-packages ()
   (packages-install
    '(magit
-       ;; Program languages
-       ;;  Elixir related
-       alchemist
-       elixir-mode
-       ;;  HTML/CSS
-       emmet-mode
-       htmlize
-       css-eldoc
-       tagedit
-       ;;  Javascript
-       js2-mode
-       js2-refactor
-       nodejs-repl
-       tern
-       tern-auto-complete
-       ;; Yaml
-       yaml-mode
-       ;; Emacs lisp
-       elisp-slime-nav
-       ;; Elisp utilities
-       dash
-       ;; Emacs enhance
-       undo-tree
-       smartparens
-       guide-key
-       fill-column-indicator
-       browse-kill-ring
-       hungry-delete
-       smooth-scrolling
-       expand-region
-       highlight-escape-sequences
-       visual-regexp
-       multiple-cursors
-       ;; Dired mode enhance
-       dired-details
-       ;; Ido mode enhance
-       ido-vertical-mode
-       ido-at-point
-       ido-ubiquitous
-       ;; Beauty org ui
-       org-bullets
-       ;; M-x and isearch alter
-       swiper
-       counsel
-       ;; Shell command completion
-       shell-command
-       ;; Code checking
-       flycheck
-       flycheck-pos-tip
-       flycheck-mix
-       ;; Code snippets
-       yasnippet
-       ;; Services manager
-       prodigy
-       ;; Emacs color theme
-       atom-one-dark-theme)))
+     ;; Program languages
+     ;;  Elixir related
+     alchemist
+     elixir-mode
+     ;;  HTML/CSS
+     emmet-mode
+     htmlize
+     css-eldoc
+     tagedit
+     rainbow-mode
+     ;;  Javascript
+     js2-mode
+     js2-refactor
+     nodejs-repl
+     tern
+     tern-auto-complete
+     coffee-mode
+     ;; Yaml
+     yaml-mode
+     ;; Emacs lisp
+     elisp-slime-nav
+     ;; Elisp utilities
+     dash
+     ;; Emacs enhance
+     undo-tree
+     smartparens
+     guide-key
+     fill-column-indicator
+     browse-kill-ring
+     hungry-delete
+     smooth-scrolling
+     expand-region
+     highlight-escape-sequences
+     visual-regexp
+     multiple-cursors
+     ;; Dired mode enhance
+     dired-details
+     ;; Ido mode enhance
+     ido-vertical-mode
+     ido-at-point
+     ido-ubiquitous
+     ;; Beauty org ui
+     org-bullets
+     ;; M-x and isearch alter
+     swiper
+     counsel
+     ;; Shell command completion
+     shell-command
+     ;; Code checking
+     flycheck
+     flycheck-pos-tip
+     flycheck-mix
+     ;; Code snippets
+     yasnippet
+     ;; Services manager
+     prodigy
+     ;; Emacs color theme
+     atom-one-dark-theme
+     ;; Minor display
+     diminish)))
 
 (condition-case nil
     (init--install-packages)
@@ -162,3 +166,17 @@
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (coffee-mode rainbow-mode diminish zenburn-theme yaml-mode visual-regexp undo-tree tern-auto-complete tagedit smooth-scrolling smex smartparens shell-command prodigy org-bullets org nodejs-repl magit js2-refactor ido-vertical-mode ido-ubiquitous ido-at-point hungry-delete htmlize highlight-escape-sequences guide-key flycheck-pos-tip flycheck-mix flx-ido fill-column-indicator expand-region exec-path-from-shell emmet-mode elisp-slime-nav dired-details css-eldoc counsel browse-kill-ring atom-one-dark-theme alchemist))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

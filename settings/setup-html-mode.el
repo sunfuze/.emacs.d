@@ -1,5 +1,3 @@
-(require 'emmet-mode)
-
 (defun skip-to-next-blank-line ()
   (interactive)
   (let ((inhibit-changing-match-data t))
@@ -27,16 +25,15 @@
     (indent-region beg (+ end 11))
     (goto-char (+ beg 4))))
 
-(defun --set-simplezen ()
-  (require 'simplezen)
-  (set (make-local-variable 'yas-fallback-behavior)
-       '(apply simplezen-expand-or-indent-for-tab)))
-
-(add-hook 'sgml-mode-hook '--setup-simplezen)
-;; add emmet hook
+;; Add emmet(zencoding) hook
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'html-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
+
+(add-hook 'css-mode-hook
+	  (lambda ()
+	    (rainbow-mode)
+	    (setq css-indent-offset 2))
 
 ;; set emmet indent 2 spaces
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
