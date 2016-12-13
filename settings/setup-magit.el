@@ -5,6 +5,8 @@
   (unless prefix
     (delete-other-windows)))
 
+(global-set-key (kbd "C-x g") 'magit-status-fullscreen)
+
 ;; Dont prompt me
 (set-default 'magit-push-always-verify nil)
 (set-default 'magit-revert-buffers 'silent)
@@ -32,6 +34,5 @@
        (window-configuration-to-register :vc-annotate-fullscreen)
        ad-do-it
        (delete-other-windows))
-
      (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
 (provide 'setup-magit)
