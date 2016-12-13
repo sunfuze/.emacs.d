@@ -55,9 +55,6 @@
 ;; Undo/redo window configuration by Ctrl-c left/right
 (winner-mode 1)
 
-;; Show empty lines after buffer end
-(set-default 'indicate-empty-lines t)
-
 ;; Move through camel case words
 (global-subword-mode 1)
 

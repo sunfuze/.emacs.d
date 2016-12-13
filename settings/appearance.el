@@ -3,6 +3,11 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+(global-prettify-symbols-mode t)
+
+;; Disable visual bell
+(setq ring-bell-function 'ignore)
+
 (setq inhibit-startup-message t)
 
 (setq font-lock-maximum-decoration t
@@ -73,7 +78,6 @@
 ;; config diminish
 (require 'diminish)
 (diminish 'elisp-slime-nav-mode)
-(diminish 'ivy-mode "ivy")
 (diminish 'guide-key-mode)
 (diminish 'eldoc-mode)
 (diminish 'smartparens-mode)

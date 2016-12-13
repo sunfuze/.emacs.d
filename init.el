@@ -166,17 +166,3 @@
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (coffee-mode rainbow-mode diminish zenburn-theme yaml-mode visual-regexp undo-tree tern-auto-complete tagedit smooth-scrolling smex smartparens shell-command prodigy org-bullets org nodejs-repl magit js2-refactor ido-vertical-mode ido-ubiquitous ido-at-point hungry-delete htmlize highlight-escape-sequences guide-key flycheck-pos-tip flycheck-mix flx-ido fill-column-indicator expand-region exec-path-from-shell emmet-mode elisp-slime-nav dired-details css-eldoc counsel browse-kill-ring atom-one-dark-theme alchemist))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

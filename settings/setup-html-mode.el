@@ -33,7 +33,7 @@
 (add-hook 'css-mode-hook
 	  (lambda ()
 	    (rainbow-mode)
-	    (setq css-indent-offset 2))
+	    (setq css-indent-offset 2)))
 
 ;; set emmet indent 2 spaces
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2)))
